@@ -1,0 +1,31 @@
+<div class="page">
+    <button class="btn btn__discount" [class.btn__discount--active]="btnActiveF" (click)="applyDiscount(15)">Хочу скидку</button>
+    <div class="product" [style.grid-template-columns]="getGridTemplateColumns()">
+        <div class="product-null" *ngIf="isProductsFound">
+            <h3 class="product-null__title">Ничего не найдено</h3>
+        </div>
+        <app-card-block class="product__item" *ngFor="let product of GetFilteredProducts(); let i = index;"
+            [id]="product.id"
+            [name]="product.name"
+            [price]="product.price"
+            [discount]="discount"
+            [filter]="filter"
+            (idEvent)="idInfoApp($event)"
+        ><div class="card-block__color" [style.background-color]="product.color"><b>{{product.color}}</b></div>
+        </app-card-block>
+    </div>
+    <div class="product-search">
+        <div class="product-search__item">
+            <label class="product-search__label" for="search">Filter: </label>
+            <input class="product-search__input" name="search" type="text" [(ngModel)]="filter" (input)="updateFilteredProducts()">
+        </div>
+        <div class="product-search__item">
+            <button class="product-search__btn" (click)="decreasing()">Decs</button>
+            <button class="product-search__btn" (click)="increasing()">Asc</button>
+            <button class="product-search__btn" (click)="max()">Max</button>
+        </div>
+    </div>
+    <div class="product-info">
+        {{products[indexId].description}}
+    </div>
+</div>

@@ -1,0 +1,34 @@
+.card-block {
+    padding: 20px;
+
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.card-block__item {
+}
+.card-block__id {
+    margin-bottom: 5px;
+
+    font-size: 12px;
+}
+.card-block__title {
+    margin-bottom: 20px;
+
+    font-size: 26px;
+
+    text-transform: uppercase;
+}
+.card-block__wrapper {
+    display: flex;
+}
+.price-block {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 15px;
+    font-size: 20px;
+}
+.price-block__span {
+}
+.price-block__price {
+}

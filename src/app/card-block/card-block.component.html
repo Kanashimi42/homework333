@@ -1,0 +1,14 @@
+<div class="card-block">
+    <div class="card-block__item">
+        <h4 class="card-block__id">{{id}}</h4>
+        <h2 class="card-block__title">{{name}}</h2>
+        <div class="card-block__wrapper">
+            <button class="btn" (click)="idInfo(id)">Ознакомиться</button>
+            <div class="price-block">
+                <span class="price-block__span">Price:</span>
+                <span class="price-block__price">{{price * discount / 100}}$</span>
+            </div>
+        </div>
+        <ng-content></ng-content>
+    </div>
+</div>
